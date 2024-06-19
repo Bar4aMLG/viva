@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="fonts.css/all.min.css">
+    <head>
+        <title>movie rate</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+                *{
+                padding: 0;
+                margin: 0;
+            }
+            body{
+                background-color: rgb(0, 0, 0);
+            }
+
+            .masthead{
+                min-height: 60vh;
+                background-size: cover;
+                background-repeat: no-repeat;
+                position: relative;
+                color: white;
+                text-shadow: 0px 0px 12px rgb(1, 158, 255),
+                0px 0px 12px rgb(1, 208, 255),
+                0px 0px 12px rgb(1, 247, 255);
+            }
+            .title{
+                font-size: 5rem;
+            }
+            .color-overlay{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 40%;
+                text-align: center;
+            }
+            @media (max-width:768px) {
+                .masthead{
+                    min-height: 60vh;
+                }
+                .titel{
+                    font-size: calc(1.525rem +3.3vw);
+                }
+                .container{
+                    margin-left: 10%;
+                }
+                .card__blade,.card__iron_man,.card__spider__man{
+                    margin-bottom: 60px;
+                }
+                .card__home,.card__end__game,.card__true__man{
+                    margin-bottom: 60px;
+                }
+                .footer__titel{
+                    margin-right: 50px;
+                }
+            }
+            @media (max-width:996px){
+                .card__blade:hover{
+                    z-index: 33;
+                }
+                .card__iron_man:hover{
+                    z-index: 34;
+                }
+                .card__spider__man:hover{
+                    z-index: 35;
+                }
+                .card__home:hover{
+                    z-index: 33;
+                }
+                .card__end__game:hover{
+                    z-index: 44;
+                }
+                .card__true__man{
+                    z-index: 35;
+                }
+            }
+            .card{
+                width: 300px;
+                height: 170px;
+                background-color: black;
+                background-image: url(movie\ photo/runner.jpg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                display: flex;
+                align-items: flex-end;
+                transition: 0.4s;
+                border-radius: 15px;
+                box-shadow: 0px 0px 12px  rgb(128, 0, 255);
+                margin-top: 20px;
+            }
+            .card:hover{
+                opacity: 0;
+                z-index: 33;
+            }
+            .card__info{
+                width: 300px;
+                height: 170px;
+                background-image: linear-gradient(120deg,rgb(136, 0, 255),rgb(0, 208, 255));
+                z-index: -1;
+                position: absolute;
+                left: 0;
+                top: 0;
+                border-radius: 15px;
+            }
+            .card__blade,.card__iron_man,.card__spider__man{
+                position: relative;
+            }
+            .card__home,.card__end__game,.card__true__man{
+                position: relative;
+            }
+            .card__text{
+                text-align: justify;
+                padding: 8px;
+                color: white;
+            }
+            .card__iron{
+                width: 300px;
+                height: 170px;
+                background-color: black;
+                background-image: url(movie\ photo/ironman.jfif);
+                background-size: contain;
+                background-repeat: no-repeat;
+                display: flex;
+                align-items: flex-end;
+                transition: 0.4s;
+                border-radius: 15px;
+                box-shadow: 0px 0px 12px  rgb(255, 17, 0);
+                margin-top: 20px;
+            }
+            .card__iron:hover{
+                opacity: 0;
+                z-index: 55;
+            }
+            .card__info__iron{
+                width: 300px;
+                height: 170px;
+                background-image: linear-gradient(10deg,rgb(255, 0, 0),rgb(66, 66, 66));
+                z-index: -1;
+                position: absolute;
+                left: 0;
+                top: 0;
+                border-radius: 15px;
+            }
+            .card__text__iron{
+                text-align: justify;
+                padding: 8px;
+                color: white;
+            }
+            .card__spider{
+                width: 300px;
+                height: 170px;
+                background-color: black;
+                background-image: url(movie\ photo/SpiderMan.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                display: flex;
+                align-items: flex-end;
+                transition: 0.4s;
+                border-radius: 15px;
+                box-shadow: 0px 0px 12px  rgb(0, 21, 255);
+                margin-top: 20px;
+            }
+            .card__spider:hover{
+                opacity: 0;
+                z-index: 88;
+            }
+            .card__info__spider{
+                width: 300px;
+                height: 170px;
+                background-image: linear-gradient(10deg,rgb(255, 0, 0),rgb(5, 98, 248));
+                z-index: -1;
+                position: absolute;
+                left: 0;
+                top: 0;
+                border-radius: 15px;
+            }
+            .card__text__spider{
+                text-align: justify;
+                padding: 8px;
+                color: white;
+            }
+            .card__home__alone{
+                width: 300px;
+                height: 170px;
+                background-color: black;
+                background-image: url(movie\ photo/homealone.jfif);
+                background-size: cover;
+                background-repeat: no-repeat;
+                display: flex;
+                align-items: flex-end;
+                transition: 0.4s;
+                border-radius: 15px;
+                box-shadow: 0px 0px 12px  rgb(0, 255, 115);
+                margin-top: 20px;
+            }
+            .card__home__alone:hover{
+                opacity: 0;
+            }
+            .card__info__home{
+                width: 300px;
+                height: 170px;
+                background-image: linear-gradient(10deg,rgb(0, 255, 85),rgb(19, 164, 50));
+                z-index: -1;
+                position: absolute;
+                left: 0;
+                top: 0;
+                border-radius: 15px;
+            }
+            .card__text__home{
+                text-align: justify;
+                padding: 8px;
+                color: white;
+            }
+            .card__end{
+                width: 300px;
+                height: 170px;
+                background-color: black;
+                background-image: url(movie\ photo/marvelEndGame.webp);
+                background-size: cover;
+                background-repeat: no-repeat;
+                display: flex;
+                align-items: flex-end;
+                transition: 0.4s;
+                border-radius: 15px;
+                box-shadow: 0px 0px 12px  rgb(0, 76, 255);
+                margin-top: 20px;
+            }
+            .card__end:hover{
+                opacity: 0;
+            }
+            .card__info__end{
+                width: 300px;
+                height: 170px;
+                background-image: linear-gradient(10deg,rgb(0, 81, 255),rgb(96, 19, 164));
+                z-index: -1;
+                position: absolute;
+                left: 0;
+                top: 0;
+                border-radius: 15px;
+            }
+            .card__text__end{
+                text-align: justify;
+                padding: 8px;
+                color: white;
+                margin-top: 20px;
+            }
+            .card__true{
+                width: 300px;
+                height: 170px;
+                background-color: black;
+                background-image: url(movie\ photo/trumanshow.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                display: flex;
+                align-items: flex-end;
+                transition: 0.4s;
+                border-radius: 15px;
+                box-shadow: 0px 0px 12px  rgb(255, 166, 0);
+                margin-top: 20px;
+            }
+            .card__true:hover{
+                opacity: 0;
+            }
+            .card__info__true{
+                width: 300px;
+                height: 170px;
+                background-image: linear-gradient(10deg,rgb(255, 162, 0),rgb(255, 195, 99));
+                z-index: -1;
+                position: absolute;
+                left: 0;
+                top: 0;
+                border-radius: 15px;
+            }
+            .card__text__true{
+                text-align: justify;
+                padding: 8px;
+                color: white;
+                margin-top: 10px;
+            }
+            .sub__title{
+                background:url(movie\ photo/cyber__pank.gif) ;
+                background-size: cover;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 80px;
+                font-weight: bold;
+                text-align: center;
+                text-shadow: 0px 0px 12px rgba(255, 255, 255, 0.214);
+            }
+            .stars{
+                padding-bottom: 5px;
+            }
+            .fa-star{
+                margin-top: 12px;
+                position: relative;
+                left: 55px;
+                text-shadow: 0px 0px 12px rgb(255, 196, 0);
+            }
+            .footer__titel{
+                color: rgb(255, 255, 255);
+                text-decoration: underline;
+                text-align: center;
+                margin-top: 60px;
+            }
+            .about__us__dis{
+                color: white;
+                font-size: 120%;
+                border-bottom: 1px solid ;
+            }
+            .socail__midea{
+                text-decoration: none;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="masthead"
+        style="background-image: url('movie\ photo/cyber.jpg');">
+        <div class="color-overlay d-flex justify-content-center 
+        align-item-center">
+        <h1 class="title">welcome</h1>
+        </div>
+        </div>
+
+        <h1 class="sub__title">
+            Movies section
+        </h1>
+
+        <div class="container">
+            <div class="row" style="margin-bottom: 30px;">
+                <div class="col-sm-4 col-md-4">
+                    <div class="card__blade">
+                        <div class="card">
+                        </div>
+                        <div class="card__info">
+                            <p class="card__text">Plot. In the year 2049, 30 years following the events
+                                of Blade Runner, bioengineered humans known as replicants are slaves. K (short for his serial number, KD6-3.7), a Nexus-9 replicant, works for the Los Angeles Police Department (LAPD) as a "blade runner", an officer who hunts and "retires" (kills) rogue replicants.
+                            </p>
+                        </div>
+                        <span class="stars">
+                        <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                        <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                        <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                        <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                        <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                    <div class="card__iron_man">
+                        <div class="card__iron">
+                            
+                        </div>
+                            <div class="card__info__iron">
+                                <p class="card__text__iron">
+                                    Summaries. After being held captive in an Afghan cave, billionaire engineer Tony Stark creates a unique weaponized suit of armor to fight evil. After being
+                                    kidnapped by a powerful terrorist organization, brilliant industrialist Tony Stark narrowly escapes using an iron suit he crafted from scrap metal and spare parts.
+                                </p>
+                        </div>
+                        <span class="stars">
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            </span>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                    <div class="card__spider__man">
+                        <div class="card__spider">
+
+                        </div>
+                        <div class="card__info__spider">
+                            <p class="card__text__spider">
+                                Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People charged with protecting its very existence. When the heroes clash on how to handle a new threat, Miles must redefine what it means to be a hero.
+                            </p>
+                        </div>
+                        <span class="stars">
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-4 col-md-4">
+                    <div class="card__home">
+                        <div class="card__home__alone">
+                        </div>
+                        <div class="card__info__home">
+                            <p class="card__text__home">
+                                HOME ALONE is the story of 8-year-old Kevin (Macaulay Culkin), a mischievous kid who feels largely ignored by his large extended family. While everyone is preparing for a Christmas vacation in Paris, Kevin gets in trouble, is banished to the attic overnight
+                                , and wishes his family would just disappear
+                            </p>
+                        </div>
+                        <span class="stars">
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            </span>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                    <div class="card__end__game">
+                        <div class="card__end">
+                            
+                        </div>
+                            <div class="card__info__end">
+                                <p class="card__text__end">
+                                    AVENGERS: ENDGAME is set after Thanos' catastrophic use of the Infinity Stones randomly wiped out half of Earth's population in Avengers: Infinity War. Those left behind are desperate to do something -- anything -- to bring back their lost loved ones
+                                </p>
+                        </div>
+                        <span class="stars">
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            </span>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                    <div class="card__true__man">
+                        <div class="card__true">
+
+                        </div>
+                        <div class="card__info__true">
+                            <p class="card__text__true">
+                                The film stars Jim Carrey as Truman Burbank, a man who grew up living an ordinary life that—unbeknown to him—takes place on a large set populated by actors for a television show about him
+                            </p>
+                        </div>
+                        <span class="stars">
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            <i class="fas fa-star" style="font-size: 30px; color: rgb(249, 184, 4);"></i>
+                            </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="about__us">
+                    <h1 class="footer__titel">
+                        about us
+                    </h1>
+                    <p class="about__us__dis">
+                        We let you rate your  best film
+                        and share you rate to a another pepole.
+                        
+                    </p>
+                    <p class="about__us__dis">
+                        and you will find some cool moive to 
+                        watch,and you will find another pepole
+                        have same movie what do you like.
+                    </p>
+                    <p class="about__us__dis">
+                        our company give this experince for
+                        free and without subscription.
+                    </p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <h1 class="footer__titel">
+                        how we work
+                    </h1>
+                    <p class="about__us__dis">
+                        We took people's opinions about the films,
+                        voted for the film, and put them on our website
+                    </p>
+                    <p class="about__us__dis">
+                        Every day the site is updated to add new votes to the site
+                    </p>
+                </div>
+                <div class="col-sm-4">
+                    <h1 class="footer__titel">
+                        connect to us
+                    </h1>
+                    <p class="about__us__dis">
+                        <a class="socail__midea" href="https://www.instagram.com/bar4a.almasri/" target="_blank">Instgram</a>
+                    </p>
+                    <p class="about__us__dis">
+                        <a class="socail__midea" href="#">Facebook</a>
+                    </p>
+                    <p class="about__us__dis">
+                        <a class="socail__midea" href="#">Gmail</a>
+                    </p>
+                    <p class="about__us__dis">
+                        <a class="socail__midea" href="#">twitter</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center footer">
+            <div class="container">
+                Copyright @ Bar4a.Almasri
+            </div>
+        </div>
+    </body>
+</html>
