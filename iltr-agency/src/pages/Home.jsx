@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Helmet } from 'react-helmet-async'
-import { FiZap, FiPalette, FiCpu, FiTrendingUp, FiArrowRight } from 'react-icons/fi'
+import { FiZap, FiImage, FiCpu, FiTrendingUp, FiArrowRight } from 'react-icons/fi'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -126,7 +126,7 @@ const Home = () => {
 
   const features = [
     { icon: <FiZap />, title: 'Fast Delivery', description: 'Quick turnaround without compromising quality.' },
-    { icon: <FiPalette />, title: 'Premium Design', description: 'Award-winning aesthetics that stand out.' },
+    { icon: <FiImage />, title: 'Premium Design', description: 'Award-winning aesthetics that stand out.' },
     { icon: <FiCpu />, title: 'AI Enhanced', description: 'Cutting-edge AI technology for stunning visuals.' },
     { icon: <FiTrendingUp />, title: 'Business Focused', description: 'Results-driven strategies for growth.' },
   ]
